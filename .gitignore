@@ -10,15 +10,6 @@ __pycache__/
 # Database
 backend/db.sqlite3
 
-# Secret settings file
-backend/settings_secret.py
-
-# Media files
-backend/media/
-
-# Logs
-backend/logs/
-
 # Temporary files
 *.swp
 *.swo
