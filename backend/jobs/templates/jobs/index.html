@@ -1,0 +1,28 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'jobs/style.css' %}">
+</head>
+<body>
+    <h2>Oferty pracy</h2>
+    {% if advertisement_list %}
+        {% for job in advertisement_list %}
+        <li>
+            <h3>
+                {{ job.title }}
+            </h3>
+            <p><span>Data publikacji: </span>{{ job.pub_date }}</p>
+            <p><span>Pensja: </span>{{ job.salary }} zł</p>
+            <a href="{% url 'jobs:details' job.pk %}">Szczegóły</a>
+        </li>
+        <br>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
